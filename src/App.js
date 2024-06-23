@@ -1,13 +1,26 @@
 
 import { Button } from 'react-bootstrap';
-import React from 'react';
-import ProductCard from './components/ProductCard';
+import React, { useState } from 'react';
+import ProductCard from './components/ProductCard/ProductCard';
+import Header from './components/Header/Header';
+import Cart from './components/Cart/Cart';
 
 
 function App() {
+  const [open, setOpen] = useState()
+
+  const handleCartToggle = (toggle) => {
+       setOpen(toggle)
+
+       
+  }
+
   return (
     <React.Fragment>
-        <ProductCard/>
+      <Header onActive={handleCartToggle}/>
+  
+      {open && <Cart/>}
+      <ProductCard/>
     </React.Fragment>
   );
 }
