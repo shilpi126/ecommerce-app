@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { Button, Card, Container, Nav, Navbar, Stack } from 'react-bootstrap'
+import { Button,Navbar, Stack } from 'react-bootstrap'
 import CartContext from '../../store/cart-context'
 
 const Header = (props) => {
@@ -17,7 +17,7 @@ const Header = (props) => {
   
   
   return (
-  <React.Fragment>
+  
       <Navbar expand="lg" bg="dark" variant="dark" className="p-2">
     <div className="w-100 d-flex justify-content-center">
       <Stack direction="horizontal" gap={5}>
@@ -32,7 +32,7 @@ const Header = (props) => {
     <div style={{color:"white", marginBottom:"50px", fontSize:"20px", color:"yellow"}}>{ctx.cartItems.length}</div>
   </Navbar>
 
-  </React.Fragment>
+  
     
   )
 }

@@ -12,9 +12,7 @@ const ProductCard = () => {
   
   return (
    <React.Fragment>
-    <Card style={{backgroundColor:"gray", height:"10rem", width:"100%"}}>
-    <Card.Title style={{textAlign:"center", fontSize:"90px", color:"whitesmoke", marginTop:"10px"}}>The Generics</Card.Title>
-    </Card>
+    
     <Container>
         <Row >
           {productsArr.map((item,index)=>(
