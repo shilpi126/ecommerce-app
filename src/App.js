@@ -1,9 +1,10 @@
 
-import { Button } from 'react-bootstrap';
+
 import React, { useState } from 'react';
 import ProductCard from './components/ProductCard/ProductCard';
 import Header from './components/Header/Header';
 import Cart from './components/Cart/Cart';
+import CartProvider from './store/CartProvider';
 
 
 function App() {
@@ -16,12 +17,12 @@ function App() {
   }
 
   return (
-    <React.Fragment>
+    <CartProvider>
       <Header onActive={handleCartToggle}/>
   
       {open && <Cart/>}
       <ProductCard/>
-    </React.Fragment>
+    </CartProvider>
   );
 }
 

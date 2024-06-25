@@ -1,7 +1,7 @@
 const productsArr = [
 
     {
-    
+    id:1,
     title: 'Colors',
     
     price: 100,
@@ -11,7 +11,7 @@ const productsArr = [
     },
     
     {
-    
+    id:2,
     title: 'Black and white Colors',
     
     price: 50,
@@ -21,7 +21,7 @@ const productsArr = [
     },
     
     {
-    
+    id:3,
     title: 'Yellow and Black Colors',
     
     price: 70,
@@ -31,7 +31,7 @@ const productsArr = [
     },
     
     {
-    
+    id:4,
     title: 'Blue Color',
     
     price: 100,
@@ -41,8 +41,8 @@ const productsArr = [
     },
     
     {
-    
-        title: 'Colors',
+    id:5,
+        title: 'Red Colors ',
         
         price: 100,
         
@@ -51,8 +51,8 @@ const productsArr = [
         },
         
         {
-        
-        title: 'Black and white Colors',
+        id:6,
+        title: 'Black ',
         
         price: 50,
         
@@ -61,9 +61,9 @@ const productsArr = [
         },
         
         {
-        
-        title: 'Yellow and Black Colors',
-        
+        id:7,
+        title: 'Yellow Colors',
+    
         price: 70,
         
         imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%203.png',
