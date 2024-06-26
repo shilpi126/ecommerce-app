@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { Button,Navbar, Stack } from 'react-bootstrap'
+import { Button,Container,Nav,Navbar, Stack } from 'react-bootstrap'
 import CartContext from '../../store/cart-context'
 
 const Header = (props) => {
@@ -18,18 +18,28 @@ const Header = (props) => {
   
   return (
   
-      <Navbar expand="lg" bg="dark" variant="dark" className="p-2">
-    <div className="w-100 d-flex justify-content-center">
-      <Stack direction="horizontal" gap={5}>
-        <Navbar.Brand href="#home">HOME</Navbar.Brand>
-        <Navbar.Brand href="#store">STORE</Navbar.Brand>
-        <Navbar.Brand href="#about">ABOUT</Navbar.Brand>
-      </Stack>
-    </div>
-    <div className="vr ms-auto" />
+      <Navbar expand="lg" bg="dark" variant="dark" >
+      <Container className="d-flex">
+       <Nav>
+       <Nav.Link href="/">
+          HOME
+        </Nav.Link>
+        <Nav.Link  href="store">
+          STORE
+        </Nav.Link>
+        <Nav.Link  href="about">
+          ABOUT
+        </Nav.Link>
+       </Nav>
+    
+   
 
-    <Button className="bg-dark " onClick={handleClick}>Cart</Button>
-    <div style={{color:"white", marginBottom:"50px", fontSize:"20px", color:"yellow"}}>{ctx.cartItems.length}</div>
+<div>   
+<div style={{color:"white",marginLeft:"55px" ,marginBottom:"-5px", fontSize:"20px", color:"yellow"}}>{ctx.cartItems.length}</div>
+   <Button className="bg-dark " onClick={handleClick}>Cart</Button>
+
+</div>
+</Container>
   </Navbar>
 
   
