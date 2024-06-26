@@ -24,7 +24,7 @@ const Header = (props) => {
        <Nav.Link href="/">
           HOME
         </Nav.Link>
-        <Nav.Link  href="store">
+        <Nav.Link  href="product">
           STORE
         </Nav.Link>
         <Nav.Link  href="about">

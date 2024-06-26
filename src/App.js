@@ -8,6 +8,7 @@ import About from './components/About/About';
 import Banner from './components/Banner';
 import Footer from './components/Footer';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import Home from './components/Home/Home';
 
 
 function App() {
@@ -19,8 +20,10 @@ function App() {
   }
 
   const router = createBrowserRouter([
-    {path:'/', element: <ProductCard/>},
+    {path:'/' , element: <Home/>},
+    {path:'/product', element: <ProductCard/>},
     {path:'/about', element: <About/>}
+
   ])
 
   return ( 

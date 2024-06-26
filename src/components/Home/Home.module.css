@@ -1,0 +1,26 @@
+.title{
+    text-align: center;
+    margin: 20px;
+    font-style: italic;
+}
+
+
+
+.list{
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    border-bottom: 1px solid black;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.list-item-first{
+    font-weight:600 ;
+    margin-right: 10px;
+}
+
+.list-item{
+    margin-right:10px ;
+    color: gray;
+}
