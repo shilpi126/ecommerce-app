@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 import classes from "./FetchMovieData.module.css"
 
 const FetchMovieData = () => {
@@ -7,7 +7,7 @@ const FetchMovieData = () => {
     const [retrying, setRetrying] = useState(false);
     const [error, setError] = useState(null)
 
-    const fetchMovieHandler = async () => {
+    const fetchMovieHandler = useCallback(async() => {
         setError(null)
     try{
         setIsLoading(true)
@@ -41,7 +41,12 @@ const FetchMovieData = () => {
             
         }
         setIsLoading(false)
-    }
+    },[])
+
+
+    useEffect(() => {
+        fetchMovieHandler()
+    },[fetchMovieHandler])
 
 let content = <p className={classes.loading}>Found no movies.</p>;
 
@@ -83,16 +88,15 @@ let content = <p className={classes.loading}>Found no movies.</p>;
     
 return (
     <React.Fragment>
-       
+        
         <section>
         {retrying ? <button className={classes.btn} onClick={cancleRetryingHandler}>Cancle Retying</button>
-         :
+            :
             <button className={classes.btn} onClick={fetchMovieHandler}>Fetch Movie</button>
         }
         </section>
+        
 
-     
-         
         {content}
         
     </React.Fragment>
