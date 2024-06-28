@@ -9,6 +9,7 @@ import Banner from './components/Banner';
 import Footer from './components/Footer';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Home from './components/Home/Home';
+import FetchMovieData from './components/Movies/FetchMovieData';
 
 
 function App() {
@@ -32,8 +33,7 @@ function App() {
       <Header onActive={handleCartToggle}/>
       <Banner/>
       <RouterProvider router={router}/>
-      {/* <ProductCard/> */}
-      {/* <About/> */}
+
       <Footer/>
     </CartProvider>
   );

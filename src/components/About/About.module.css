@@ -8,9 +8,32 @@
 
 }
 
+.container{
+    margin-left: 15%;
+    margin-right: 15%;
+    
+}
 
-.card-image{
+.card-img{
     width: 200px;
     height: 200px;
-    border-radius: 50%;
+    margin: 20px;   
+    float: left;
+   
+    
 }
+
+
+.card-image {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    /* padding-top: 75px; */
+    display: inline-block;
+}
+
+p {
+    text-align: justify;
+    /* font-size: 20px; */
+}
+

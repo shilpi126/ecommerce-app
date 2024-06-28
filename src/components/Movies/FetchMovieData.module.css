@@ -1,0 +1,60 @@
+.btn{
+    height: 70px;
+    width: 50%;
+    margin: 20px;
+    margin-left: 26%;
+    border-radius: 10px;
+    background-color: purple;
+    color: aliceblue;
+    border: none;
+    font-size:x-large;
+}
+
+.loading{
+    text-align: center;
+    font-size: xx-large;
+    color:orangered;
+    
+}
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.list{
+    height: auto;
+    width: 70%;
+    list-style-type: none;
+    border: 1px solid gray;
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    
+
+}
+
+
+.list h1{
+    color: purple;
+    font-size: larger;
+    border-bottom: 1px solid gray;
+    padding-bottom: 10px;
+}
+
+
+.list button{
+    height: 40px;
+    width: 150px;
+    margin: 20px;
+    
+    border-radius: 10px;
+    background-color: purple;
+    color: aliceblue;
+    border: none;
+    font-size: medium;
+}

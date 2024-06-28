@@ -2,6 +2,8 @@ import React, { useContext } from 'react'
 import productsArr from './ProductData'
 import { Button, Card, Col, Container, Row, Stack } from 'react-bootstrap'
 import CartContext from '../../store/cart-context'
+import FetchMovieData from '../Movies/FetchMovieData'
+
 
 const ProductCard = () => {
   const ctx = useContext(CartContext)
@@ -14,6 +16,7 @@ const ProductCard = () => {
    <React.Fragment>
     
     <Container>
+       
         <Row >
           {productsArr.map((item,index)=>(
               <Col xs={6} md={4} key={index+1}>
