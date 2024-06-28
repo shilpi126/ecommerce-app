@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react'
 import classes from "./FetchMovieData.module.css"
+import AddMovieForm from './AddMovieForm'
 
 const FetchMovieData = () => {
     const [movies, setMovies] = useState([])
@@ -88,7 +89,7 @@ let content = <p className={classes.loading}>Found no movies.</p>;
     
 return (
     <React.Fragment>
-        
+        <AddMovieForm/>
         <section>
         {retrying ? <button className={classes.btn} onClick={cancleRetryingHandler}>Cancle Retying</button>
             :
