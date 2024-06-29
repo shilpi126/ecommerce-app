@@ -12,62 +12,116 @@ const FetchMovieData = () => {
         setError(null)
     try{
         setIsLoading(true)
-        const response = await fetch("https://swapi.dev/api/films/")
-
+        const response = await fetch("https://react-rest-f93cb-default-rtdb.asia-southeast1.firebasedatabase.app/movies.json")
+        
         if(!response.ok){
             throw new Error('something went wrong, ...Retrying ')
             
         }
 
         const data = await response.json();
-        const transformedMovies = data.results.map((movieData) => {
-                return {
-                    id:movieData.episode_id,
-                    title:movieData.title,
-                    openingText:movieData.opening_crawl,
-                    releaseDate:movieData.release_date,
-                }
+        
+        const moviesArray = [];
+        for (const key in data){
+            moviesArray.push({
+                id:key,
+                title:data[key].title,
+                openingText:data[key].openingText,
+                releaseDate:data[key].releaseDate
             })
+        }
+        
             setIsLoading(false)
-            setMovies(transformedMovies)
+            setMovies(moviesArray)
         } catch(err){
-            if(err){
-                setRetrying(true)
-                if(retrying){
-                setTimeout(()=>{
-                    fetchMovieHandler()
-                }, 1000)
-                }
-            }
+            // if(err){
+            //     setRetrying(true)
+            //     if(retrying){
+            //     setTimeout(()=>{
+            //         fetchMovieHandler()
+            //     }, 1000)
+            //     }
+            // }
+
+            console.log(err)
             
         }
         setIsLoading(false)
     },[])
 
 
+    const addMovieToDb = async(NewMovieObj) => {
+        try{
+        const response = await fetch("https://react-rest-f93cb-default-rtdb.asia-southeast1.firebasedatabase.app/movies.json",{
+        method: 'POST',
+        body: JSON.stringify(NewMovieObj),
+        headers:{
+            'Content-Type': 'application/json'
+        }
+    })
+
+    setMovies([...movies,NewMovieObj])
+
+    
+}catch(err){
+    alert(err.message)
+    console.log("failed request")
+}
+
+}
+
+
+
     useEffect(() => {
         fetchMovieHandler()
+        
+
     },[fetchMovieHandler])
+
+    console.log(movies)
+
+    const handleDeleteMovie = async(event) => {
+        const movieId = event.target.id;
+
+       try{
+        const res = await fetch(`https://react-rest-f93cb-default-rtdb.asia-southeast1.firebasedatabase.app/movies/${movieId}.json`,{
+            method:'DELETE',
+            headers: { 
+                'Content-type': 'application/json'
+            } 
+        })
+
+        const movieData = document.getElementById(movieId)
+        movieData.parentElement.parentElement.remove()
+       }catch(err){
+          console.log(err)
+       }
+
+    }
 
 let content = <p className={classes.loading}>Found no movies.</p>;
 
     if(movies.length > 0){
         content =  <ul className={classes.container}>
-        {movies.map((item)=>(
-            <li className={classes.list} key={item.id}>
+        {movies.map((item,index)=>(
+            <li className={classes.list} key={index+1}>
                 <div className={classes.date}>{item.releaseDate}</div>
                 <h1>{item.title}</h1>
                 
                 <div>{item.openingText}</div>
+               <div>
                 <button>BUY TICKETS</button>
+                <button id={item.id} onClick={handleDeleteMovie}>Delete</button>
+               </div>
+
             </li>
         ))}
     </ul>
     }
 
-    // if(error){
-    //     content = <p className={classes.loading}>{error}</p>
-    // }
+    if(error){
+        content = <p className={classes.loading}>{error}</p>
+    }
 
     
     if(isLoading){
@@ -86,10 +140,11 @@ let content = <p className={classes.loading}>Found no movies.</p>;
 
     }
     
-    
+
+  
 return (
     <React.Fragment>
-        <AddMovieForm/>
+        <AddMovieForm onAddMovieData={addMovieToDb}/>
         <section>
         {retrying ? <button className={classes.btn} onClick={cancleRetryingHandler}>Cancle Retying</button>
             :

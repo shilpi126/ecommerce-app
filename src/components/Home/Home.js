@@ -6,12 +6,12 @@ import FetchMovieData from '../Movies/FetchMovieData'
 
 const Home = () => {
   return (
-    <React.Fragment>
+    <div className={classes.home}>
 
         <h1 className={classes.title}>TOURS</h1>
         <FetchMovieData/>
 
-    </React.Fragment>
+    </div>
   )
 }
 

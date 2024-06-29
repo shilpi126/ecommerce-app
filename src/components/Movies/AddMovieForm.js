@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Input from '../UI/Input'
 import classes from "./AddMovieForn.module.css"
 
-const AddMovieForm = () => {
+const AddMovieForm = (props) => {
     const [title, setTitle] = useState("");
     const [releaseDate, setReleaseDate] = useState("")
     const [openingText, setOpeningText]= useState("")
@@ -17,16 +17,22 @@ const AddMovieForm = () => {
         setOpeningText(event.target.value)
     }
 
-    const handleFormSubmit = (event) => {
+    const handleFormSubmit = async (event) => {
         event.preventDefault()
 
+    
         const NewMovieObj = {
             title,
             releaseDate,
             openingText,
         }
 
-        console.log(NewMovieObj)
+        props.onAddMovieData(NewMovieObj)
+
+        setTitle("")
+        setReleaseDate("")
+        setOpeningText("")
+
 
     }
 
@@ -42,7 +48,7 @@ const AddMovieForm = () => {
             value={title}
             onChange={handleTitleChange}
             />
-            <label>Opening Teaxt</label>
+            <label htmlFor='openingtext'>Opening Teaxt</label>
             <textarea
             className={classes.textarea}
             id="openingtext"
