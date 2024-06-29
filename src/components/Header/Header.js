@@ -1,6 +1,9 @@
 import React, { useContext, useState } from 'react'
 import { Button,Container,Nav,Navbar, Stack } from 'react-bootstrap'
 import CartContext from '../../store/cart-context'
+import { NavLink } from 'react-router-dom'
+import classes from "./Header.module.css"
+
 
 const Header = (props) => {
   const [active, setActive] = useState(false)
@@ -13,35 +16,48 @@ const Header = (props) => {
   }
 
   
-
-  
-  
   return (
   
-      <Navbar expand="lg" bg="dark" variant="dark" >
-      <Container className="d-flex">
-       <Nav>
-       <Nav.Link href="/">
+   <div className={classes.container}>
+    <div></div>
+       <header className={classes.header}>
+        <ul>
+          <li>
+          <NavLink className={classes.active}  to="/home">
           HOME
-        </Nav.Link>
-        <Nav.Link  href="product">
+        </NavLink >
+          </li>
+          <li>
+          <NavLink  to="/">
           STORE
-        </Nav.Link>
-        <Nav.Link  href="about">
+        </NavLink>
+          </li>
+          <li>
+         
+        <NavLink  to="/about">
           ABOUT
-        </Nav.Link>
-       </Nav>
+        </NavLink>
+          </li>
+          <li>
+             
+        <NavLink  to="/contact">
+          CONTACT US
+        </NavLink>
+          </li>
+        </ul>
+     
+     
+       </header>
     
    
 
 <div>   
-<div style={{color:"white",marginLeft:"55px" ,marginBottom:"-5px", fontSize:"20px", color:"yellow"}}>{ctx.cartItems.length}</div>
-   <Button className="bg-dark " onClick={handleClick}>Cart</Button>
+
+  <button className={classes.btn}  onClick={handleClick}>Cart</button>
+  <div className={classes.badge}>{ctx.cartItems.length}</div>
+</div>
 
 </div>
-</Container>
-  </Navbar>
-
   
     
   )

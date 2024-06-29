@@ -1,0 +1,63 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    height: 3rem;
+    padding: 2px;
+    
+}
+
+.header ul {
+display: flex;
+justify-content: center;
+/* justify-content: space-around; */
+align-content: center;
+
+
+
+}
+
+.header ul li {
+    list-style-type: none;
+    margin-right: 20px;
+    padding: 10px;
+
+}
+
+.header ul li a{
+    color: white;
+    text-decoration: none;
+    
+}
+
+.header ul li a.active{
+   color: darkorange;
+   border-bottom: 1px solid darkorange;
+
+}
+
+.btn{
+    width: 3rem;
+    background-color: darkorange;
+    color: black;
+    border-radius: 10%;
+    border:1px solid white;
+    margin-right: 40px;
+    margin-top: 10px;
+    
+}
+
+.badge{
+    color: white;
+    
+    font-size: 15px;
+    position: relative;
+    top: -42px;
+    left: 55%;
+    
+
+}
+
+
+
+

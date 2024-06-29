@@ -145,15 +145,17 @@ let content = <p className={classes.loading}>Found no movies.</p>;
 return (
     <React.Fragment>
         <AddMovieForm onAddMovieData={addMovieToDb}/>
-        <section>
+        <div className={classes["btn-container"]}>
         {retrying ? <button className={classes.btn} onClick={cancleRetryingHandler}>Cancle Retying</button>
             :
             <button className={classes.btn} onClick={fetchMovieHandler}>Fetch Movie</button>
         }
-        </section>
+        </div>
         
 
-        {content}
+       <div className={classes.card}>
+       {content}
+       </div>
         
     </React.Fragment>
     )
