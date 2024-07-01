@@ -12,6 +12,7 @@ import Home from './components/Home/Home';
 import FetchMovieData from './components/Movies/FetchMovieData';
 
 import Contact from './components/Contact/Contact';
+import ProductDetailsPage from './components/ProductCard/ProductDetailsPage';
 
 
 function App() {
@@ -31,8 +32,10 @@ function App() {
       <Banner />
      <main>
    <Routes>
-    <Route path='/' element={<ProductCard />} />
-      <Route path='/home' element={<Home />} />
+   <Route path='/' element={<Home />} />
+    <Route path='/product' element={<ProductCard />} />
+    <Route path='/product/:productId' element={<ProductDetailsPage />} />
+    
       <Route path='/about' element={<About />} />
       <Route path='/contact' element={<Contact />} />
       

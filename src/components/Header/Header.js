@@ -23,12 +23,12 @@ const Header = (props) => {
        <header className={classes.header}>
         <ul>
           <li>
-          <NavLink className={classes.active}  to="/home">
+          <NavLink className={classes.active}  to="/">
           HOME
         </NavLink >
           </li>
           <li>
-          <NavLink  to="/">
+          <NavLink  to="/product">
           STORE
         </NavLink>
           </li>
