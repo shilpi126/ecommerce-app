@@ -4,59 +4,65 @@ import classes from "./Register.module.css"
 import Navbar from './Navbar'
 import Input from '../UI/Input'
 
+//https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=[API_KEY]
+
 const Register = () => {
     const [useremail, setUseremail] =useState("")
     const [userpassword, setUserpassword] = useState("")
     const [isLogin, setIsLogin] = useState(false);
     const [isLoding, setIsLoading] =useState(false)
-
+    
     const switchAuthModeHandler = () => {
         setIsLogin((prev) => !prev)
     }
-
+    
     const handleEmailChange = (event) => {
         setUseremail(event.target.value)
     }
-
+    
     const handlePasswordChange = (event) => {
         setUserpassword(event.target.value)
     }
-
+    
     const handleFormSubmit = (event) => {
         setIsLoading(true)
         event.preventDefault()
+        let url ;
         if(isLogin){
+            url = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyB-AonKwyEBsFYQsBZr9Mx3wJQQ6BSw34E';
 
         }else{
-        
-        fetch('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyB-AonKwyEBsFYQsBZr9Mx3wJQQ6BSw34E',
-            {
+            url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyB-AonKwyEBsFYQsBZr9Mx3wJQQ6BSw34E';
+        }
+        fetch(url,{
             method:'POST',
             body:JSON.stringify({
                 email:useremail,
                 password:userpassword,
                 returnSecureToken:true,
-                token:"justcheck1234",
             }),
             headers:{
                 'Content-Type':'application/json'
             }
-          }
-        ).then(res => {
+        }).then((res) => {
             setIsLoading(false)
             if(res.ok){
-                
-            }else{
-                return res.json().then(data => {
+                return res.json();
+            } else{
+                return res.json().then((data)=>{
                     const errorMessage = 'Authentication Failed';
 
                     alert(errorMessage);
 
-                    console.log(data.error.message)
+                    throw new Error(data.error.message)
                 })
             }
+        }).then((data) => {
+            console.log(data)
         })
-        }
+        .catch((err)=>{
+            alert(err.message)
+        })
 
         setUseremail('')
         setUserpassword('')
