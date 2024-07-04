@@ -41,7 +41,7 @@ const AddMovieForm = (props) => {
     <React.Fragment>
         <form className={classes.form} onSubmit={handleFormSubmit}>
             <Input
-            
+            className={classes.input}
             id="title"
             type="text"
             label="Title"

@@ -13,6 +13,7 @@ import FetchMovieData from './components/Movies/FetchMovieData';
 
 import Contact from './components/Contact/Contact';
 import ProductDetailsPage from './components/ProductCard/ProductDetailsPage';
+import Register from './components/Auth/Register';
 
 
 function App() {
@@ -27,22 +28,23 @@ function App() {
     <BrowserRouter>
     <CartProvider>
   
-      {open && <Cart />}
+      {/* {open && <Cart />}
       <Header onActive={handleCartToggle} />
       <Banner />
      <main>
    <Routes>
    <Route path='/' element={<Home />} />
     <Route path='/product' element={<ProductCard />} />
-    <Route path='/product/:productId' element={<ProductDetailsPage />} />
+    <Route path='/product/:productId/*' element={<ProductDetailsPage />} />
     
       <Route path='/about' element={<About />} />
       <Route path='/contact' element={<Contact />} />
-      
+   
     </Routes>
    </main>
-      <Footer />
+      <Footer /> */}
   
+      <Register/>
   </CartProvider>
   </BrowserRouter>
 
