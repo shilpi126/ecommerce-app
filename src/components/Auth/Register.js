@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import classes from "./Register.module.css"
 
 import Navbar from './Navbar'
 import Input from '../UI/Input'
+import AuthContext from '../../store/auth-context'
 
 //https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=[API_KEY]
 
@@ -12,6 +13,8 @@ const Register = () => {
     const [isLogin, setIsLogin] = useState(false);
     const [isLoding, setIsLoading] =useState(false)
     
+    const authCtx = useContext(AuthContext)
+
     const switchAuthModeHandler = () => {
         setIsLogin((prev) => !prev)
     }
@@ -58,7 +61,7 @@ const Register = () => {
                 })
             }
         }).then((data) => {
-            console.log(data)
+            authCtx.login(data.idToken)
         })
         .catch((err)=>{
             alert(err.message)
