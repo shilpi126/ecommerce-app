@@ -7,7 +7,7 @@ import CartProvider from './store/CartProvider';
 import About from './components/About/About';
 import Banner from './components/Banner';
 import Footer from './components/Footer';
-import { RouterProvider, createBrowserRouter , Route,Routes,BrowserRouter} from 'react-router-dom';
+import { RouterProvider, createBrowserRouter , Route,Routes,BrowserRouter, Navigate} from 'react-router-dom';
 import Home from './components/Home/Home';
 import FetchMovieData from './components/Movies/FetchMovieData';
 
@@ -18,12 +18,13 @@ import AuthContextProvide from './store/auth-context';
 import Profile from './components/Auth/Profile/Profile';
 import Navbar from './components/Auth/Navbar';
 import AuthContext from './store/auth-context';
-import UserProfile from './components/Auth/Profile/UserProfile';
+import HomePage from './components/Auth/Profile/HomePage';
 
 
 function App() {
   const [open, setOpen] = useState()
   const authCtx = useContext(AuthContext)
+  console.log(authCtx.isLoggedIn)
   const handleCartToggle = (toggle) => {
     setOpen(toggle)
 
@@ -53,12 +54,18 @@ function App() {
     <Navbar/>
     <Routes>
       
-    <Route path='/' element={ <UserProfile/>}/>
-   
-       <Route path='/profile' element={  <Profile/>}/>
+    <Route path='/' element={ <HomePage/>}/>
+    {!authCtx.isLoggedIn &&  <Route path='/register' element={ <Register/>}/>
+   }
 
-         <Route path='/register' element={ <Register/>}/>
-   
+   <Route path='/profile' element={authCtx.isLoggedIn ?  <Profile/> : <Navigate to='/register' />} />
+  
+   <Route path='*' element={<Navigate to='/' />} />
+  
+
+  
+      
+        
       
     
     

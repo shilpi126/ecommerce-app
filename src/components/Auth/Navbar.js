@@ -18,10 +18,7 @@ const Navbar = () => {
       <Link to='/'>React Auth</Link>
     </h1>
     <ul>
-        {isLoggedIn &&  
-        <li>
-          <Link to='/'>User</Link>
-        </li>}
+        
         {!isLoggedIn &&  
         <li>
           <Link to='/register'>Login</Link>
