@@ -14,6 +14,8 @@ import FetchMovieData from './components/Movies/FetchMovieData';
 import Contact from './components/Contact/Contact';
 import ProductDetailsPage from './components/ProductCard/ProductDetailsPage';
 import Register from './components/Auth/Register';
+import AuthContextProvide from './store/auth-context';
+import Profile from './components/Profile/Profile';
 
 
 function App() {
@@ -26,7 +28,7 @@ function App() {
 
   return ( 
     <BrowserRouter>
-    <CartProvider>
+    
   
       {/* {open && <Cart />}
       <Header onActive={handleCartToggle} />
@@ -44,8 +46,10 @@ function App() {
    </main>
       <Footer /> */}
   
+  <CartProvider> 
       <Register/>
-  </CartProvider>
+      <Profile/>
+  </CartProvider> 
   </BrowserRouter>
 
   );
