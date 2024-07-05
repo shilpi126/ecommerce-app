@@ -1,13 +1,15 @@
 import React, { useContext } from 'react'
 import classes from "./Register.module.css"
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import AuthContext from '../../store/auth-context'
 
 const Navbar = () => {
   const authCtx = useContext(AuthContext);
+  const navigate = useNavigate()
   const isLoggedIn = authCtx.isLoggedIn;
   const handleLogout = () => {
     authCtx.logout()
+    navigate('/register')
   }
 
   return (
