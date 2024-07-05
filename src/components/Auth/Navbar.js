@@ -9,18 +9,24 @@ const Navbar = () => {
   const handleLogout = () => {
     authCtx.logout()
   }
+
   return (
     <div className={classes.container}>
     <h1 className={classes.title}>
-      <Link >React Auth</Link>
+      <Link to='/'>React Auth</Link>
     </h1>
     <ul>
+        {isLoggedIn &&  
+        <li>
+          <Link to='/'>User</Link>
+        </li>}
         {!isLoggedIn &&  
         <li>
-          <Link>Login</Link>
+          <Link to='/register'>Login</Link>
         </li>}
+       
         {isLoggedIn && <li>
-          <Link>Profile</Link>
+          <Link to='/profile'>Profile</Link>
           </li>}
         {isLoggedIn &&  
         <li>

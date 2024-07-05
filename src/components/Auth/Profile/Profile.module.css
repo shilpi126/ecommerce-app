@@ -1,0 +1,58 @@
+.cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.cont h1{
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 60px;
+
+}
+
+.cont form {
+    width:50%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.cont label{
+    text-align: center;
+    font-size: small;
+    font-weight: bold;
+    margin: 10px;
+    color: gray;
+}
+
+.cont form input{
+    width:20rem;
+    height:1.5rem;
+    border-radius: 2px;
+    
+    
+}
+
+.cont form button{
+    margin-top: 20px;
+    height: 2rem;
+    border-style: none;
+    border-radius: 2px;
+    color: white;
+    background-color: rgb(43, 3, 75);;
+    
+    
+}
+
+
+.user{
+    text-align: center;
+    font-size: 100px;
+    margin-top: 5%;
+}

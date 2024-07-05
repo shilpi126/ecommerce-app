@@ -4,14 +4,16 @@ import classes from "./Register.module.css"
 import Navbar from './Navbar'
 import Input from '../UI/Input'
 import AuthContext from '../../store/auth-context'
+import { useNavigate } from 'react-router-dom'
 
-//https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=[API_KEY]
 
 const Register = () => {
     const [useremail, setUseremail] =useState("")
     const [userpassword, setUserpassword] = useState("")
     const [isLogin, setIsLogin] = useState(false);
     const [isLoding, setIsLoading] =useState(false)
+
+    const navigate = useNavigate()
     
     const authCtx = useContext(AuthContext)
 
@@ -62,6 +64,7 @@ const Register = () => {
             }
         }).then((data) => {
             authCtx.login(data.idToken)
+            navigate('/')
         })
         .catch((err)=>{
             alert(err.message)
@@ -73,7 +76,7 @@ const Register = () => {
 
 return (
     <div className={classes.cont}>
-    <Navbar/>
+   
     <div className={classes.signup}>
         <h1>{isLogin ? 'Login' : 'Sign Up'}</h1>
         <form onSubmit={handleFormSubmit}>

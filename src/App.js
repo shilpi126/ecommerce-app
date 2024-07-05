@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import ProductCard from './components/ProductCard/ProductCard';
 import Header from './components/Header/Header';
 import Cart from './components/Cart/Cart';
@@ -15,12 +15,15 @@ import Contact from './components/Contact/Contact';
 import ProductDetailsPage from './components/ProductCard/ProductDetailsPage';
 import Register from './components/Auth/Register';
 import AuthContextProvide from './store/auth-context';
-import Profile from './components/Profile/Profile';
+import Profile from './components/Auth/Profile/Profile';
+import Navbar from './components/Auth/Navbar';
+import AuthContext from './store/auth-context';
+import UserProfile from './components/Auth/Profile/UserProfile';
 
 
 function App() {
   const [open, setOpen] = useState()
-
+  const authCtx = useContext(AuthContext)
   const handleCartToggle = (toggle) => {
     setOpen(toggle)
 
@@ -47,8 +50,19 @@ function App() {
       <Footer /> */}
   
   <CartProvider> 
-      <Register/>
-      <Profile/>
+    <Navbar/>
+    <Routes>
+      
+    <Route path='/' element={ <UserProfile/>}/>
+   
+       <Route path='/profile' element={  <Profile/>}/>
+
+         <Route path='/register' element={ <Register/>}/>
+   
+      
+    
+    
+      </Routes>
   </CartProvider> 
   </BrowserRouter>
 
