@@ -34,43 +34,28 @@ function App() {
 
   return ( 
     <>
-
-
-    {/* <Navbar/> */}
-  
-        {open && <Cart />}
+      {open && <Cart />}
       <Header onActive={handleCartToggle} />
       <Banner />
-     <main>
+    <main>
 
-   <Routes>
-   <Route path='/' element={<Home />} />
-    <Route path='/product' element={<ProductCard />} />
-    <Route path='/product/:productId/*' element={<ProductDetailsPage />} />
-    
-      <Route path='/about' element={<About />} />
-      <Route path='/contact' element={<Contact />} />
-      {!authCtx.isLoggedIn &&  <Route path='/auth' element={ <Register/>}/>
-   }
+      <Routes>
+      <Route path='/' element={<Home />} />
+      <Route path='/product' element={authCtx.isLoggedIn ? <ProductCard /> : <Navigate to='/auth'/>} />
+        <Route path='/product/:productId/*' element={<ProductDetailsPage />} />
+        
+          <Route path='/about' element={<About />} />
+          <Route path='/contact' element={<Contact />} />
+          {!authCtx.isLoggedIn &&  <Route path='/auth' element={ <Register/>}/>
+      }
 
-   <Route path='/profile' element={authCtx.isLoggedIn ?  <Profile/> : <Navigate to='/auth' />} />
-  
-   <Route path='*' element={<Navigate to='/' />} />
-   
-    </Routes>
-   </main>
+      
+      <Route path='*' element={<Navigate to='/' />} />
+      
+        </Routes>
+  </main>
       {/* <Footer />  */}
-    {/* <Route path='/' element={ <HomePage/>}/>
-    {!authCtx.isLoggedIn &&  <Route path='/register' element={ <Register/>}/>
-   }
-
-   <Route path='/profile' element={authCtx.isLoggedIn ?  <Profile/> : <Navigate to='/register' />} />
   
-   <Route path='*' element={<Navigate to='/' />} />
-   */}
-
-  
-
   </>
 
   );
