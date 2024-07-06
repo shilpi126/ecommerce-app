@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom'
 const Register = () => {
     const [useremail, setUseremail] =useState("")
     const [userpassword, setUserpassword] = useState("")
-    const [isLogin, setIsLogin] = useState(false);
+    const [isLogin, setIsLogin] = useState(true);
     const [isLoding, setIsLoading] =useState(false)
 
     const navigate = useNavigate()
@@ -65,6 +65,7 @@ const Register = () => {
         }).then((data) => {
             authCtx.login(data.idToken)
             navigate('/')
+            authCtx.autologout()
         })
         .catch((err)=>{
             alert(err.message)

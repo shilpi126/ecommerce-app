@@ -31,7 +31,7 @@ function App() {
   }
 
   return ( 
-    <BrowserRouter>
+    <>
     
   
       {/* {open && <Cart />}
@@ -49,7 +49,7 @@ function App() {
     </Routes>
    </main>
       <Footer /> */}
-  
+
   <CartProvider> 
     <Navbar/>
     <Routes>
@@ -71,7 +71,8 @@ function App() {
     
       </Routes>
   </CartProvider> 
-  </BrowserRouter>
+
+  </>
 
   );
 }
