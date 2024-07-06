@@ -25,19 +25,24 @@ function App() {
   const [open, setOpen] = useState()
   const authCtx = useContext(AuthContext)
   console.log(authCtx.isLoggedIn)
+
   const handleCartToggle = (toggle) => {
     setOpen(toggle)
 
   }
 
+
   return ( 
     <>
-    
+
+
+    {/* <Navbar/> */}
   
-      {/* {open && <Cart />}
+        {open && <Cart />}
       <Header onActive={handleCartToggle} />
       <Banner />
      <main>
+
    <Routes>
    <Route path='/' element={<Home />} />
     <Route path='/product' element={<ProductCard />} />
@@ -45,32 +50,26 @@ function App() {
     
       <Route path='/about' element={<About />} />
       <Route path='/contact' element={<Contact />} />
+      {!authCtx.isLoggedIn &&  <Route path='/auth' element={ <Register/>}/>
+   }
+
+   <Route path='/profile' element={authCtx.isLoggedIn ?  <Profile/> : <Navigate to='/auth' />} />
+  
+   <Route path='*' element={<Navigate to='/' />} />
    
     </Routes>
    </main>
-      <Footer /> */}
-
-  <CartProvider> 
-    <Navbar/>
-    <Routes>
-      
-    <Route path='/' element={ <HomePage/>}/>
+      {/* <Footer />  */}
+    {/* <Route path='/' element={ <HomePage/>}/>
     {!authCtx.isLoggedIn &&  <Route path='/register' element={ <Register/>}/>
    }
 
    <Route path='/profile' element={authCtx.isLoggedIn ?  <Profile/> : <Navigate to='/register' />} />
   
    <Route path='*' element={<Navigate to='/' />} />
-  
+   */}
 
   
-      
-        
-      
-    
-    
-      </Routes>
-  </CartProvider> 
 
   </>
 

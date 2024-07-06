@@ -3,11 +3,13 @@ import { Button,Container,Nav,Navbar, Stack } from 'react-bootstrap'
 import CartContext from '../../store/cart-context'
 import { NavLink } from 'react-router-dom'
 import classes from "./Header.module.css"
+import AuthContext from '../../store/auth-context'
 
 
 const Header = (props) => {
   const [active, setActive] = useState(false)
   const ctx = useContext(CartContext);
+  const authCtx = useContext(AuthContext)
 
   const handleClick = () => {
   setActive(!active)
@@ -15,12 +17,16 @@ const Header = (props) => {
       
   }
 
+  const handleLogout = () => {
+    authCtx.logout()
+  }
+
   
   return (
   
    <div className={classes.container}>
-    <div></div>
-       <header className={classes.header}>
+    <div className={classes.logo}>ECOMM</div>
+        <header className={classes.header}>
         <ul>
           <li>
           <NavLink className={classes.active}  to="/">
@@ -33,11 +39,25 @@ const Header = (props) => {
         </NavLink>
           </li>
           <li>
-         
+          
         <NavLink  to="/about">
           ABOUT
         </NavLink>
           </li>
+         <li>
+         {!authCtx.isLoggedIn && 
+          <NavLink  to="/auth">
+          LOGIN
+        </NavLink>}
+        {authCtx.isLoggedIn && 
+        <button onClick={handleLogout} className={classes.logoutbtn}>
+          <NavLink  to="/logout">
+          LOGOUT
+        </NavLink>
+        </button>}
+
+          </li>
+
           <li>
              
         <NavLink  to="/contact">

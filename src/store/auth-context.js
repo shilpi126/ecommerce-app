@@ -30,7 +30,7 @@ export const AuthContextProvide = (props) => {
         
         setToken('')
         localStorage.removeItem('token')
-        
+        navigate('/register')
     }
 
     const autoLogout = () =>{

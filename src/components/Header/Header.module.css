@@ -1,9 +1,19 @@
 .container{
     display: flex;
     justify-content: space-between;
+    
     background-color: black;
     height: 3rem;
     padding: 2px;
+    
+}
+
+.container .logo{
+    color: white;
+    padding-left: 30px;
+    font-size: larger;
+    margin-top: 7px;
+    font-weight: bold;
     
 }
 
@@ -24,6 +34,11 @@ align-content: center;
 
 }
 
+.logoutbtn{
+    background-color: transparent;
+    border-style: none;
+}
+
 .header ul li a{
     color: white;
     text-decoration: none;
@@ -35,6 +50,8 @@ align-content: center;
    border-bottom: 1px solid darkorange;
 
 }
+
+
 
 .btn{
     width: 3rem;

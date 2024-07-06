@@ -64,7 +64,7 @@ const Register = () => {
             }
         }).then((data) => {
             authCtx.login(data.idToken)
-            navigate('/')
+            navigate('/product')
             authCtx.autologout()
         })
         .catch((err)=>{
