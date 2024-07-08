@@ -24,7 +24,7 @@ import HomePage from './components/Auth/Profile/HomePage';
 function App() {
   const [open, setOpen] = useState()
   const authCtx = useContext(AuthContext)
-  console.log(authCtx.isLoggedIn)
+  //console.log(authCtx.isLoggedIn)
 
   const handleCartToggle = (toggle) => {
     setOpen(toggle)

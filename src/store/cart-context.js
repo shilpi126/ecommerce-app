@@ -4,6 +4,7 @@ const CartContext = createContext({
     cartItems:[],
     addToCart:(item) => {},
     CartQuantity:0,
+    getCartData : () => {},
 })
 
 

@@ -3,6 +3,7 @@ import { Card, Container, Stack } from 'react-bootstrap'
 import classes from "./About.module.css"
 
 const About = () => {
+
   return (
     <>
         <h1 className={classes.title}>About</h1>

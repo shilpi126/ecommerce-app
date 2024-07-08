@@ -11,20 +11,20 @@ const Cart = () => {
       setQuantity(event.target.value)
   }
   
- 
-  console.log(ctx.cartItems)
+  
 
   return (
 
-<div   style={{
+<div style={{
         backgroundColor: 'white',
         width: '35%',
         height: "auto",
         padding:"20px",
         border:"1px solid black",
         position:'absolute',
-        left: '65%',
-        
+        left: '64%',
+        top:'10%',
+
         zIndex:10,
       
         
