@@ -1,11 +1,11 @@
 import React from 'react'
-import classes from "./Input.module.css"
+
 const Input = (props) => {
   return (
     <div>
-        <label>{props.label}</label>
+        <label htmlFor={props.id}>{props.label}</label>
         <input
-        className={classes.input}
+        className={props.className}
         type={props.type}
         id={props.id}
         value={props.value}

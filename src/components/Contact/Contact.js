@@ -52,10 +52,10 @@ const Contact = () => {
 
 
 return (
-    <React.Fragment>
+    <div className={classes.container}>
     <form className={classes.form} onSubmit={handleFormSubmit}>
         <Input
-        
+        className={classes.input}
         id="username"
         type="text"
         label="Username"
@@ -64,7 +64,7 @@ return (
         />
 
         <Input
-        
+         className={classes.input}
         id="email"
         type="email"
         label="Email :"
@@ -73,7 +73,7 @@ return (
     
         />
         <Input
-        
+         className={classes.input}
         id="phoneNo"
         type="number"
         label="Phone Number"
@@ -82,7 +82,7 @@ return (
         />
         <button type='submit'>Submit</button>
     </form>
-</React.Fragment>
+</div>
   )
 }
 
