@@ -59,7 +59,7 @@ const AddMovieForm = (props) => {
             rows="4"
             />
             <Input
-            
+            className={classes.input}
             id="releaseDate"
             type="date"
             label="Release Date"

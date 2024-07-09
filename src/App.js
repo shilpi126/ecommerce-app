@@ -5,7 +5,7 @@ import { Route,Routes, Navigate} from 'react-router-dom';
 import AuthContext from './store/auth-context';
 const Home = React.lazy(()=> import('./components/Home/Home')) ;
 const About = React.lazy(() => import('./components/About/About')) ;
-const Banner = React.lazy(() => import( './components/Banner')) ;
+const Banner = React.lazy(() => import( './components/Header/Banner')) ;
 const Footer = React.lazy(() => import('./components/Footer'))  ;
 const Register = React.lazy(() => import('./components/Auth/Register'))
 const ProductDetailsPage = React.lazy(() => import('./components/ProductCard/ProductDetailsPage'))

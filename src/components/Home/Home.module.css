@@ -1,6 +1,8 @@
-/* .home{
-    background-color:grey;
-} */
+.home{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
 .title{
     text-align: center;

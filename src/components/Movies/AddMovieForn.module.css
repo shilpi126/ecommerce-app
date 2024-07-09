@@ -1,14 +1,13 @@
 .form{
-    height: 70%;
+    height: 25rem;
     width: 50%;
-    margin: 20px;
-    margin-left: 26%;
-    border-radius: 10px;
-    background-color: gray;
+    
+    border-radius: 5px;
+    background-color:rgb(23, 1, 47);
     color: aliceblue;
     border: 1px solidgray;
     padding: 20px;
-    /* font-size:x-large; */
+    
     
 }
 
@@ -20,15 +19,16 @@
 }
 
 .form button{
-    height: 40px;
-    width: 60%;
+    height: 35px;
+    width: 40%;
     margin-top:10px ;
-    margin-left: 20%;
-    border-radius: 10px;
-    background-color: purple;
-    color: aliceblue;
+    margin-left: 30%;
+    border-radius: 5px;
+    background-color:rgb(145, 13, 246);
+    color: white;
     border: none;
-    /* font-size:x-large; */
+    border: 1px solid rgb(196, 153, 243);
+    
 }
 
 label{
@@ -39,9 +39,10 @@ label{
 .input{
     height: 100%;
     width: 100%;
-    margin: 5px;
+    
+    margin-bottom: 20px;
     padding: 5px;
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: white;
     
     border: none;

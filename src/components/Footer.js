@@ -1,11 +1,10 @@
 import React from 'react'
-import { Card } from 'react-bootstrap'
 
 const Footer = () => {
   return (
-    <Card style={{backgroundColor:"aqua", color:"white", width:"100%", height:"6rem", textAlign:"center", fontSize:"3rem",marginTop:"10px"}}>
+    <div style={{backgroundColor:"gray", color:"white", width:"100%", height:"8rem", textAlign:"center", fontSize:"4rem",marginTop:"10px",paddingTop:"0.5rem"}}>
         <div >The Generic</div>
-    </Card>
+    </div>
   )
 }
 

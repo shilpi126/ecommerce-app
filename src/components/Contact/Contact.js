@@ -53,6 +53,7 @@ const Contact = () => {
 
 return (
     <div className={classes.container}>
+        <h1>CONTACT PAGE</h1>
     <form className={classes.form} onSubmit={handleFormSubmit}>
         <Input
         className={classes.input}

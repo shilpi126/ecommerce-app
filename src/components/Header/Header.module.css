@@ -1,10 +1,10 @@
 .container{
     display: flex;
     justify-content: space-between;
-    
-    background-color: black;
-    height: 3rem;
+    background-color: rgb(23, 1, 47);
+    height: 3.5rem;
     padding: 2px;
+    
     
 }
 
@@ -46,17 +46,17 @@ align-content: center;
 }
 
 .header ul li a.active{
-   color: darkorange;
-   border-bottom: 1px solid darkorange;
+   color:  rgb(196, 131, 240);
+   border-bottom: 1px solid rgb(197, 126, 244);
 
 }
 
 
 
 .btn{
-    width: 3rem;
-    background-color: darkorange;
-    color: black;
+    width: 3.5rem;
+    background-color: rgb(171, 66, 241);
+    color: white;
     border-radius: 10%;
     border:1px solid white;
     margin-right: 40px;
@@ -70,10 +70,28 @@ align-content: center;
     font-size: 15px;
     position: relative;
     top: -42px;
-    left: 55%;
+    left: 60%;
     
 
 }
+
+.banner{
+    background-color: rgb(83, 80, 88);
+    color: white;
+    
+    text-align: center;
+    padding: 15px;
+    height: 100%;
+    width: 100%;
+    
+}
+
+.banner h1{
+ 
+    font-size: 120px;
+}
+
+
 
 
 

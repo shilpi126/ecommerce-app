@@ -3,8 +3,14 @@ width: 100%;
 height: 100%;
 
 display: flex;
+flex-direction: column;
+margin-top: 2rem;
 justify-content: center;
 align-items: center;
+}
+.container h1{
+   font-size: 30px;
+   font-style: italic;
 }
 
  .form{
@@ -13,7 +19,7 @@ align-items: center;
     
     
     border-radius: 5px;
-    background-color: gray;
+    background-color:rgb(23, 1, 47);
     color: aliceblue;
     border: 1px solidgray;
     padding: 30px;
@@ -21,7 +27,7 @@ align-items: center;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 5%;
+    margin: 1.5rem;
     
     
 }
@@ -43,9 +49,10 @@ align-items: center;
     margin-top:15px ;
 
     border-radius: 5px;
-    background-color: rgb(250, 88, 7);
-    color: aliceblue;
-    border: none;
+    background-color:rgb(137, 34, 246);
+
+    color: white;
+    border: 1px solid rgb(189, 146, 234);;
 
 }
 

@@ -105,14 +105,18 @@ let content = <p className={classes.loading}>Found no movies.</p>;
         content =  <ul className={classes.container}>
         {movies.map((item,index)=>(
             <li className={classes.list} key={index+1}>
-                <div className={classes.date}>{item.releaseDate}</div>
+                <div className={classes.listhead}>
                 <h1>{item.title}</h1>
+                <div className={classes.date}>{item.releaseDate}</div>
                 
-                <div>{item.openingText}</div>
-               <div>
+                </div>
+                
+                <div className={classes.openingtext}>{item.openingText}</div>
+
+                <div className={classes.listbtn}>
                 <button>BUY TICKETS</button>
                 <button id={item.id} onClick={handleDeleteMovie}>Delete</button>
-               </div>
+                </div>
 
             </li>
         ))}
@@ -143,7 +147,7 @@ let content = <p className={classes.loading}>Found no movies.</p>;
 
   
 return (
-    <React.Fragment>
+    <div className={classes.container}>
         <AddMovieForm onAddMovieData={addMovieToDb}/>
         <div className={classes["btn-container"]}>
         {retrying ? <button className={classes.btn} onClick={cancleRetryingHandler}>Cancle Retying</button>
@@ -157,7 +161,7 @@ return (
        {content}
        </div>
         
-    </React.Fragment>
+    </div>
     )
 }
 
